@@ -1,16 +1,52 @@
-# React + Vite
+# FiberFocus 🌿
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Eat 30 different plants a week for optimal gut health.**
 
-Currently, two official plugins are available:
+FiberFocus is a beautiful, privacy-focused web application designed to help you track your weekly plant intake. Inspired by the "30 plants a week" challenge, it makes building a diverse microbiome fun and rewarding.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![FiberFocus App](https://raw.githubusercontent.com/Verkland/fiberfocus/main/public/vite.svg) *Note: Replace with actual screenshot after deploy*
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **🥗 Comprehensive Food Database**: Track hundreds of vegetables, fruits, legumes, grains, nuts, seeds, herbs, and spices.
+- **🌍 Fully Localized**: Seamlessly switch between **English** and **Norwegian (Norsk)**.
+- **🎨 Beautiful UI**: A modern, glassmorphism-inspired interface with Light and Dark modes.
+- **🔒 Privacy First**: All data is stored locally in your browser. No accounts, no tracking, no servers.
+- **🏆 Gamified Goals**: Set your own weekly goal (default: 30) and celebrate with confetti when you reach it!
+- **✏️ Custom Foods**: Add your own unique plant foods to the list.
+- **📅 History Tracking**: Keep a record of your weekly scores.
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Use the App
+Visit the live application here: **[https://Verkland.github.io/fiberfocus](https://Verkland.github.io/fiberfocus)**
+
+### Run Locally
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Verkland/fiberfocus.git
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (Variables, Flexbox, Grid, Glassmorphism)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management**: React Context API + LocalStorage
+- **Animation**: CSS Transitions + Canvas Confetti
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+*Created with ❤️ for a healthier gut.*
