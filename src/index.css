@@ -1142,3 +1142,9 @@ button:active {
 .dark-mode .category-hint {
   color: rgba(255, 255, 255, 0.6);
 }
+
+@media (max-width: 600px) {
+  .category-hint {
+    display: none !important;
+  }
+}
