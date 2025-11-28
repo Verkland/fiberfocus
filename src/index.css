@@ -7,22 +7,20 @@
 
   /* Color Palette - Vibrant Nature */
   --color-bg: #fdfcf8;
-  /* Warm off-white */
   --color-text: #2c3e50;
   --color-text-light: #7f8c8d;
   --color-primary: #27ae60;
-  /* Fresh Green */
   --color-secondary: #e67e22;
-  /* Carrot Orange */
   --color-accent: #8e44ad;
-  /* Eggplant Purple */
-  --color-card-bg: rgba(255, 255, 255, 0.65);
-  --color-card-border: rgba(255, 255, 255, 0.6);
 
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 20px rgba(39, 174, 96, 0.2);
+  --color-card-bg: rgba(255, 255, 255, 0.7);
+  --color-card-border: rgba(255, 255, 255, 0.8);
+  --color-glass-border: 1px solid rgba(255, 255, 255, 0.5);
+
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-glow: 0 0 20px rgba(39, 174, 96, 0.3);
 
   --radius-sm: 12px;
   --radius-md: 20px;
@@ -37,14 +35,16 @@
 
 /* Dark Mode Variables */
 body.dark-mode {
-  --color-bg: #1a1a1a;
-  --color-text: #ecf0f1;
-  --color-text-light: #bdc3c7;
-  --color-card-bg: rgba(30, 30, 30, 0.75);
-  --color-card-border: rgba(255, 255, 255, 0.1);
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --color-bg: #111111;
+  --color-text: #f1f2f6;
+  --color-text-light: #a4b0be;
+  --color-card-bg: rgba(30, 30, 30, 0.6);
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-glass-border: 1px solid rgba(255, 255, 255, 0.08);
+
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -64,6 +64,8 @@ body {
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Noise Texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 /* Animated Background */
@@ -127,9 +129,10 @@ button:active {
 /* Header Styles */
 .app-header {
   background: var(--color-card-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--color-card-border);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: var(--color-glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   margin-bottom: 3rem;
@@ -340,8 +343,9 @@ button:active {
 
 .category-section {
   background: var(--color-card-bg);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--color-card-border);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: var(--color-glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-lg);
   padding: 2rem;
   box-shadow: var(--shadow-sm);
@@ -407,6 +411,7 @@ button:active {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.25rem;
+  padding-top: 0.5rem;
 }
 
 /* Food Item Styles */
@@ -415,7 +420,7 @@ button:active {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -424,20 +429,23 @@ button:active {
   user-select: none;
   position: relative;
   overflow: hidden;
+  animation: slideUp 0.4s ease-out backwards;
 }
 
 .dark-mode .food-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .food-item:hover {
-  background: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transform: translateY(-3px) scale(1.02);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-mode .food-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .food-item.checked {
@@ -569,6 +577,55 @@ button:active {
 }
 
 .category-section:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Staggered Food Items */
+.food-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.food-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.food-item:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.food-item:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.food-item:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.food-item:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.food-item:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.food-item:nth-child(8) {
+  animation-delay: 0.4s;
+}
+
+.food-item:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+.food-item:nth-child(10) {
+  animation-delay: 0.5s;
+}
+
+.food-item:nth-child(11) {
+  animation-delay: 0.55s;
+}
+
+.food-item:nth-child(12) {
   animation-delay: 0.6s;
 }
 
@@ -1066,4 +1123,22 @@ button:active {
 
 .dark-mode .menu-divider {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.category-info-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-hint {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  opacity: 0.8;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.dark-mode .category-hint {
+  color: rgba(255, 255, 255, 0.6);
 }

@@ -44,7 +44,8 @@ export const translations = {
         grains: "Whole Grains",
         nutsSeeds: "Nuts & Seeds",
         herbsSpices: "Herbs & Spices",
-        custom: "Custom Foods"
+        custom: "Custom Foods",
+        clickToExpand: "Click to see foods"
     },
     no: {
         appTitle: "FiberFocus",
@@ -91,6 +92,7 @@ export const translations = {
         grains: "Fullkorn",
         nutsSeeds: "Nøtter & Frø",
         herbsSpices: "Urter & Krydder",
-        custom: "Egne matvarer"
+        custom: "Egne matvarer",
+        clickToExpand: "Klikk for å se matvarer"
     }
 };
